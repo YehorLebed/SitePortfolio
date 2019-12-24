@@ -1,0 +1,39 @@
+.main-block {
+  background: rgb(34,35,195);
+  background: linear-gradient(180deg, rgba(34,35,195,1) 2%, rgba(45,154,253,1) 100%);
+
+  &__inner {
+    min-height: 600px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__intro {
+
+    &-heading {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 65px;
+      color: $white;
+      text-transform: uppercase;
+      padding: 30px 34px;
+      border-top: 3px solid rgba($white, 0.7);
+      border-bottom: 3px solid rgba($white, 0.7);
+      letter-spacing: 0.15em;
+    }
+    &-tags {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      
+      &-item {
+        font-size: 25px;
+        color: rgba($white, 0.7);
+        line-height: 3.4;
+      }
+    }
+  }
+}
+
