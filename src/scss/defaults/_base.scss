@@ -17,6 +17,22 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+input[type='submit'] {
+	border: none;
+	outline: none;
+}
+input[type='text']::placeholder,
+input[type='email']::placeholder,
+textarea::placeholder {
+	font-size: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+	font-family: inherit;
+	color: inherit;
+}
+textarea {
+	resize: none;
+}
 body{
 	font: 400 16px/1 'Raleway', Arial, Tahoma, sans-serif;
 }
@@ -37,6 +53,13 @@ body{
 
 .text-bold {
 	font-weight: 700;
+	font-size: 18px;
+	line-height: 1.5;
+	@media screen and (max-width: 480px) {font-size:16px;}
+	&--white {
+		@extend .text-bold;
+		color: $white;
+	}
 }
 
 .button {
@@ -48,7 +71,7 @@ body{
 	cursor: pointer;
 	transition: 0.3s;
 
-	&-primary {
+	&--primary {
 		color: $white;
 		background:$red;
 
@@ -61,8 +84,146 @@ body{
 h1 {
     font-size: 40px;
     font-family: "Raleway", sans-serif;
-    line-height: 0.7;
+    line-height: 1.7;
 		color: $black;
 		font-weight: 700;
 		margin-bottom: 30px;
-  }
+		
+		@media screen and (max-width: 480px) {font-size:32px; margin-bottom: 0;}
+}
+
+.row {
+	display: flex;
+	margin: 0 -7px;
+	flex-wrap: wrap;
+}
+
+.col{
+	&--50 {
+		display: block;
+		width: 50%;
+		flex-basis: 50%;
+		padding: 7px;
+		@media screen and (max-width: 720px) {width: 100%; flex-basis: 100%;}
+	}
+	&--25 {
+		display: block;
+		width: 25%;
+		flex-basis: 25%;
+		padding: 7px;
+		@media screen and (max-width: 720px) {width: 50%; flex-basis: 50%;}
+		@media screen and (max-width: 480px) {width: 100%; flex-basis: 100%;}
+	}
+}
+
+.column {
+	padding: 60px 43px 65px;
+	background: $purpleGradient;
+	box-sizing: border-box;
+	&--light-blue{
+		background: $blue;
+		width: 100%;
+		height: 100%;
+		&::before {
+			background: rgba($blue, .9);
+		}
+	}
+	&--purple {
+		background: $purple;
+		width: 100%;
+		height: 100%;
+		&::before {
+			background: rgba($purple, .9);
+		}
+	}
+	&--dark-blue{
+		background: $darkBlue;
+		width: 100%;
+		height: 100%;
+		&::before {
+			background: rgba($darkBlue, .9);
+		}
+	}
+	&--red{
+		background: $red;
+		width: 100%;
+		height: 100%;
+		&::before {
+			background: rgba($red, .9);
+		}
+	}
+}
+
+.title-26 {
+	line-height: 1.5;
+	font-size: 26px;
+	font-weight: 700;
+	color: $white;
+	margin: 0 0 30px;
+	text-transform: uppercase;
+}
+
+.column__text {
+	padding: 30px 0;
+	border-bottom: 2px solid rgba($white, .2);
+	font-family: 'Roboto', sans-serif;
+
+	&:last-child {
+		border: none;
+		padding-bottom: 0;
+	}
+
+	.date {
+		color: rgba($white, 0.7);
+		margin: 0 0 18px;
+	}
+
+	p {
+		color: rgba($white, 0.5);
+		line-height: 1.45;
+	}
+
+	h5 {
+		margin: 0 0 18px;
+	}
+}
+
+.form {
+	
+	&__input{
+		display: block;
+		width: 100%;
+		height: 50px;
+		margin-bottom: 27px;
+		padding: 18px;
+
+		outline: none;
+		border: 1px solid $white;
+		background: transparent;
+		font-family: 'Roboto', sans-serif;
+		font-size: 12px;
+		color: $white;
+		opacity: 0.5;
+
+		&:focus {
+			opacity: 1;
+		}
+
+		&-message {
+			@extend .form__input;
+			height: 205px;
+			margin-bottom: 36px;
+		}
+		&-submit {
+			text-align: right;
+		}
+	}
+	.button--primary {
+		opacity: 0.8;
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+

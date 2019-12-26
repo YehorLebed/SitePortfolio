@@ -1,0 +1,19 @@
+.contacts {
+  background: $darkBlueGradient;
+  padding: 125px 0;
+  
+  .col--50:first-child .column {
+   @media screen and (min-width: 720px) {
+     max-height: 738px;
+    } 
+  }
+  .col--50:nth-child(2) .column {
+    @media screen and (min-width: 720px) {
+     max-height: 234px;
+    }
+  }
+  .column:not(:last-child) { margin-bottom: 18px; }
+  .column-form .title-26 { margin-bottom: 65px; }
+  .column__text { padding: 10px 0 0;}
+  .column {padding-bottom: 60px;}
+}

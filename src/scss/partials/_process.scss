@@ -7,9 +7,11 @@
     padding: 60px 0;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
     &-box{
-      width: 280px;
+      width: calc(25% - 14px);
+      flex-basis: calc(25% - 14px);
       height: 280px;
       display: flex;
       justify-content: center;
@@ -20,6 +22,14 @@
       text-transform: uppercase;
       line-height: 1.7;
       position: relative;
+
+      &:not(:last-child) {
+        margin-right:14px;
+        @media screen and (max-width: 720px) { margin: 7px }
+      }
+
+      @media screen and (max-width: 720px) {width: calc(50% - 14px); flex-basis: calc(50% - 14px); margin: 7px;}
+      @media screen and (max-width: 480px) {width: calc(100% - 14px); flex-basis: calc(100% - 14px); margin: 7px;}
 
       &::before {
         content: '';
@@ -50,10 +60,6 @@
 
       &:hover:after, &:hover:before {
         transform: scale(1);
-      }
-
-      &:not(:last-child) {
-        margin-right:14px;
       }
 
       &-1{ background: $blue; }

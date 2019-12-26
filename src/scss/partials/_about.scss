@@ -9,6 +9,7 @@
   &__image {
     width: 430px;
     padding-right: 35px;
+    @media screen and (max-width: 480px) { display: none;}
   }
 
   &__text {

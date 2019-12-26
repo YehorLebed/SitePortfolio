@@ -1,6 +1,6 @@
 .main-block {
   background: rgb(34,35,195);
-  background: linear-gradient(180deg, rgba(34,35,195,1) 2%, rgba(45,154,253,1) 100%);
+  background:  $lightBlueGradient;
 
   &__inner {
     min-height: 600px;
@@ -13,25 +13,38 @@
   &__intro {
 
     &-heading {
+      display: inline-block;
       font-family: 'Montserrat', sans-serif;
       font-weight: 900;
       font-size: 65px;
+      text-align: center;
+      line-height: 1.2;
       color: $white;
       text-transform: uppercase;
       padding: 30px 34px;
       border-top: 3px solid rgba($white, 0.7);
       border-bottom: 3px solid rgba($white, 0.7);
       letter-spacing: 0.15em;
+
+      @media screen and (max-width: 870px) {font-size: 48px;}
     }
     &-tags {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+
+      @media screen and (max-width: 480px) {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+      }
       
       &-item {
         font-size: 25px;
         color: rgba($white, 0.7);
-        line-height: 3.4;
+        line-height: 1.2;
+        @media screen and (max-width: 870px) {font-size: 18px;}
+        @media screen and (max-width: 480px) { line-height: 1.7;}
       }
     }
   }

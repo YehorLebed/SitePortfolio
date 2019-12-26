@@ -1,0 +1,49 @@
+.info {
+  background: $lightGreen;
+  padding: 140px 0;
+  font-family: 'Roboto', sans-serif;
+
+  @media screen and (max-width: 840px) {
+    .col--50:last-child { display: none;}
+    .col--50:first-child {width: 100%; flex-basis: 100%;}
+  }
+
+  .feedback {
+
+    &__quotes {
+      color: rgba($darkBlue, .6);
+      font-size: 92px;
+      margin-bottom: 50px;
+    }
+    &__text {
+      color: rgba($black, .8);
+      line-height: 1.7;
+      margin-bottom: 55px;
+     }
+  }
+
+  .author {
+    color: rgba($black, .7);
+
+    &__sign {
+      max-width: 200px;
+      height: 66px;
+      margin-bottom: 30px;
+      transform: translateX(-10px);
+    }
+    &__name {
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+    &__position {
+      font-size: 14px
+    }
+  }
+
+}
+
+
+
+
+
